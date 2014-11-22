@@ -1,3 +1,1 @@
-Ridr
-====
-Test repo for Django setup
+Soon to be RideBid.com
