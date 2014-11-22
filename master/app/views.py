@@ -9,4 +9,4 @@ def index(request):
 	return render_to_response('rango/index.html', context_dict, context)
 
 def about(request):
-	return HttpResponse("Here is the about page. Click <a href='/app'>here</a> to go back.")
+	return render_to_response('rango/about.html')
