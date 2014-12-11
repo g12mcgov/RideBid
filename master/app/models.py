@@ -27,7 +27,7 @@ class Post(models.Model):
 	'''Stores Post objects'''
 	# Store time
 	created_on = models.DateTimeField(auto_now_add=True, null=True) 
-	title = models.CharField()
+	title = models.CharField(max_length=128)
 	text = models.TextField()
 	tags = ListField()
 	comments = ListField(EmbeddedModelField('Comment'))
@@ -39,7 +39,6 @@ class Comment(models.Model):
 	text = models.TextField()
 
 class Author(models.Model):
-	name = models.CharField()
-	email = models.CharField()
+	name = models.CharField(max_length=128)
+	email = models.CharField(max_length=128)
 
-	

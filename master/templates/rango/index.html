@@ -16,10 +16,18 @@
 
 
   <body>
-      <h1>Rango says...</h1>
-      hello world! <strong>{{ boldmessage }}</strong><br />
-      <a href="/app/about/">About</a></br>
-      <img src="{% static "test.jpg" %}" alt="Headshot"/>
+    <h1>Rango says...</h1>
+    hello world! <strong>{{ boldmessage }}</strong><br />
+    <a href="/app/about/">About</a></br>
+    <img src="{% static "test.jpg" %}" alt="Headshot"/>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.created_on }}</p>
+    <p>{{ post.text }}</p>
+    <h2>Comments</h2>
+    {% for comment in post.comments %}
+      <h3>{{ comment.author.name }} <small>on {{ comment.created_on }}</small></h3>
+      {{ comment.text }}
+    {% endfor %}
   </body>
   <!--
   <script type="text/javascript" src="js/aboutPopover.js"></script> -->
